@@ -1,0 +1,25 @@
+var xPositions =[200];
+var yPositions = [0];
+
+for(var j=0;j<10;j++){
+ xPositions.push(random(1,400));
+ yPositions.push(random(1,400));
+}
+
+draw = function() {
+    background(204, 247, 255);
+    noStroke();
+    fill(0, 200, 255);
+    for (var i = 0; i < xPositions.length; i++) {
+        ellipse(xPositions[i], yPositions[i] , 10, 10);
+        yPositions[i] += 1;
+        if (yPositions[i]>=400)
+        { yPositions[i]=0;}
+    }
+  
+ mouseClicked  =function(){
+    xPositions.push(mouseX);
+    yPositions.push(mouseY);
+  draw();   
+ };
+};
